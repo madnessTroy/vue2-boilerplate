@@ -1,0 +1,26 @@
+/*
+    This will be add more text-color options
+    Example: text-primary-900, text-secondary-200, ...
+*/
+$colors: (
+    primary: (
+        100: #F5F5FB,
+        200: #9696BB,
+        300: #9A7FEE,
+        400: #825EF0,
+        900: #222A68,
+    ),
+    secondary: (
+        100: #DBB59A,
+        200: #E0935A,
+        900: #BD5B13,
+    ),
+);
+
+@each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+        .text-#{$color}-#{$shade} {
+            color: $value;
+        }
+    }
+}
