@@ -1,7 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+import AuthRoute from '@/router/routes/authRoute'
 import DashboardRoute from '@/router/routes/dashboardRoute'
 import CalendarRoute from '@/router/routes/calendarRoute'
+
+import { checkAuth } from '@/utils/AuthServices'
 
 Vue.use(VueRouter)
 
@@ -10,7 +14,8 @@ Vue.use(VueRouter)
 * */
 const routes = [
     ...DashboardRoute,
-    ...CalendarRoute
+    ...CalendarRoute,
+    ...AuthRoute
 ]
 
 const router = new VueRouter({
@@ -18,5 +23,7 @@ const router = new VueRouter({
     base: process.env.BASE_URL,
     routes
 })
+
+checkAuth(router)
 
 export default router
