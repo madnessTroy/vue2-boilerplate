@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import moment from 'moment'
+
 export default {
     name: 'LoginView',
     data() {
@@ -20,7 +22,7 @@ export default {
         onLogin() {
             const payload = {
                 token: 'toantest123123',
-                expiredIn: 1680603803000
+                expiredIn: moment().add(1, 'hour')
             }
             this.$store.dispatch('Login', payload)
             const redirectPath = this.$route.query.redirect || 'dashboard.index'

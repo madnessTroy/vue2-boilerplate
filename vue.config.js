@@ -21,7 +21,7 @@ module.exports = {
         }
     },
     devServer: {
-        host: process.env.VUE_APP_DEV_PUBLIC_PATH || 'localhost',
+        host: 'localhost',
         port: process.env.VUE_APP_DEV_PUBLIC_PORT || '8080'
     }
 }

@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+# My websocket server folder
+./src/WebSocketServer/node_modules

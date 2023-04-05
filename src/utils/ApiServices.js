@@ -10,7 +10,7 @@ const ApiInstance = axios.create({
 
 const ApiService = {
     getUserToken() {
-        return store.getters['userToken']
+        return store.getters['token']
     },
     get(path, params, obj = {}) {
         if (!obj.params) obj.params = params
